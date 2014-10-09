@@ -1,7 +1,7 @@
 {
   "name": "make-iterator",
   "description": "Convert an argument into a valid iterator. Based on the `.makeIterator()` implementation in mout https://github.com/mout/mout.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/make-iterator",
   "author": {
     "name": "Jon Schlinkert",
