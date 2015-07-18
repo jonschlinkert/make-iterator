@@ -10,12 +10,6 @@
 
 var forOwn = require('for-own');
 
-/**
- * Convert an argument into a valid iterator.
- * Used internally on most array/object/collection methods that receives a
- * callback/iterator providing a shortcut syntax.
- */
-
 module.exports = function makeIterator(src, thisArg) {
   if (src == null) {
     return noop;
