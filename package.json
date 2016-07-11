@@ -10,7 +10,9 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "LICENSE",
+    "README.md"
   ],
   "main": "index.js",
   "engines": {
@@ -19,23 +21,24 @@
   "scripts": {
     "test": "mocha"
   },
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
-  },
   "dependencies": {
-    "for-own": "^0.1.3"
+    "kind-of": "^3.0.3"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.9",
+    "mocha": "^2.5.3"
   },
   "keywords": [
     "arr",
     "array",
-    "iterate",
-    "iterator",
     "contains",
     "for-own",
-    "forOwn",
     "forown",
-    "function"
+    "forOwn",
+    "function",
+    "iterate",
+    "iterator",
+    "make"
   ],
   "verb": {
     "related": {
@@ -47,6 +50,21 @@
         "collection-map",
         "utils"
       ]
-    }
+    },
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "verb-readme-generator",
+      "verb"
+    ]
   }
 }
