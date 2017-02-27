@@ -1,9 +1,8 @@
 /*!
  * make-iterator <https://github.com/jonschlinkert/make-iterator>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
- * Copyright (c) 2012, 2013 moutjs team and contributors (http://moutjs.com)
- * Licensed under the MIT License
+ * Copyright (c) 2014, 2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 'use strict';
@@ -85,12 +84,8 @@ function deepMatches(val, value) {
       return matchObject(val, value);
     }
   } else {
-    return isMatch(val, value);
+    return val === value;
   }
-}
-
-function isMatch(target, val) {
-  return target === val;
 }
 
 function prop(name) {

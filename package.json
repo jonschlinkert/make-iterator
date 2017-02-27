@@ -10,9 +10,7 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
-    "LICENSE",
-    "README.md"
+    "index.js"
   ],
   "main": "index.js",
   "engines": {
@@ -63,8 +61,8 @@
       "reflinks": true
     },
     "reflinks": [
-      "verb-readme-generator",
-      "verb"
+      "verb",
+      "verb-readme-generator"
     ]
   }
 }
