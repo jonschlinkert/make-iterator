@@ -1,7 +1,7 @@
 /*!
  * make-iterator <https://github.com/jonschlinkert/make-iterator>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Copyright (c) 2014-2017 Jon Schlinkert
  * Copyright (c) 2012, 2013 moutjs team and contributors (http://moutjs.com)
  * Licensed under the MIT License
  */
@@ -44,14 +44,14 @@ describe('make iterator', function() {
   it('should return an identify function if no args', function() {
     var fn = makeIterator();
     assert.strictEqual(fn(null), null);
-    assert.strictEqual(fn(void(0)), void(0));
+    assert.strictEqual(fn(void 0), void 0);
     assert.strictEqual(fn(3), 3);
   });
 
   it('should return an identify function if first arg is `null`', function() {
     var fn = makeIterator(null);
     assert.strictEqual(fn(null), null);
-    assert.strictEqual(fn(void(0)), void(0));
+    assert.strictEqual(fn(void 0), void 0);
     assert.strictEqual(fn(3), 3);
   });
 
