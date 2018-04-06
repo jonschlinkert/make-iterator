@@ -20,7 +20,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "kind-of": "^3.1.0"
+    "kind-of": "^6.0.2"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.11",
