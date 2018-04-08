@@ -12,6 +12,10 @@ Install with [npm](https://www.npmjs.com/):
 $ npm install --save make-iterator
 ```
 
+Although the code has materially changed, this was originally based on the
+make iterator function in moutjs, and externalized to a module. Thanks to the
+moutjs team for the inspiration.
+
 Copyright (c) 2012, 2013 moutjs team and contributors (http://moutjs.com)
 
 ## Usage
@@ -77,12 +81,9 @@ $ npm install -g verbose/verb#dev verb-generate-readme && verb
 
 You might also be interested in these projects:
 
-* [any](https://www.npmjs.com/package/any): Returns `true` if a value exists in the given string, array or object. | [homepage](https://github.com/jonschlinkert/any "Returns `true` if a value exists in the given string, array or object.")
-* [arr-filter](https://www.npmjs.com/package/arr-filter): Faster alternative to javascript's native filter method. | [homepage](https://github.com/jonschlinkert/arr-filter "Faster alternative to javascript's native filter method.")
-* [arr-map](https://www.npmjs.com/package/arr-map): Faster, node.js focused alternative to JavaScript's native array map. | [homepage](https://github.com/jonschlinkert/arr-map "Faster, node.js focused alternative to JavaScript's native array map.")
-* [array-every](https://www.npmjs.com/package/array-every): Returns true if the callback returns truthy for all elements in the given array. | [homepage](https://github.com/jonschlinkert/array-every "Returns true if the callback returns truthy for all elements in the given array.")
-* [collection-map](https://www.npmjs.com/package/collection-map): Returns an array of mapped values from an array or object. | [homepage](https://github.com/jonschlinkert/collection-map "Returns an array of mapped values from an array or object.")
-* [utils](https://www.npmjs.com/package/utils): Fast, generic JavaScript/node.js utility functions. | [homepage](https://github.com/jonschlinkert/utils "Fast, generic JavaScript/node.js utility functions.")
+* [breakdance](https://www.npmjs.com/package/breakdance): Breakdance is a node.js library for converting HTML to markdown. Highly pluggable, flexible and easy… [more](http://breakdance.io) | [homepage](http://breakdance.io "Breakdance is a node.js library for converting HTML to markdown. Highly pluggable, flexible and easy to use. It's time for your markup to get down.")
+* [micromatch](https://www.npmjs.com/package/micromatch): Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch. | [homepage](https://github.com/micromatch/micromatch "Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch.")
+* [snapdragon](https://www.npmjs.com/package/snapdragon): Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map… [more](https://github.com/here-be/snapdragon) | [homepage](https://github.com/here-be/snapdragon "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.")
 
 ### Author
 
