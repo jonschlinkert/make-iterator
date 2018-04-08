@@ -7,93 +7,55 @@
 
 'use strict';
 
-var typeOf = require('kind-of');
+const typeOf = require('kind-of');
 
-module.exports = function makeIterator(target, thisArg) {
+module.exports = function(target, ctx) {
   switch (typeOf(target)) {
     case 'undefined':
     case 'null':
-      return noop;
+      return val => val;
     case 'function':
-      // function is the first to improve perf (most common case)
-      // also avoid using `Function#call` if not needed, which boosts
-      // perf a lot in some cases
-      return (typeof thisArg !== 'undefined') ? function(val, i, arr) {
-        return target.call(thisArg, val, i, arr);
-      } : target;
-    case 'object':
-      return function(val) {
-        return deepMatches(val, target);
-      };
+      return ctx ? (...args) => target.call(ctx, ...args) : target;
     case 'regexp':
-      return function(str) {
-        return target.test(str);
-      };
+      return val => target.test(val);
+    case 'object':
+      return val => deepMatches(val, target);
+    case 'boolean':
+      return val => target === val;
     case 'string':
     case 'number':
     default: {
-      return prop(target);
+      return obj => obj[target];
     }
   }
 };
 
-function containsMatch(array, value) {
-  var len = array.length;
-  var i = -1;
-
-  while (++i < len) {
-    if (deepMatches(array[i], value)) {
-      return true;
-    }
-  }
-  return false;
+function has(array, value, fn) {
+  return array.some(ele => !fn(ele, value));
 }
 
-function matchArray(arr, value) {
-  var len = value.length;
-  var i = -1;
+function containsMatch(array, value) {
+  return has(array, value, deepMatches);
+}
 
-  while (++i < len) {
-    if (!containsMatch(arr, value[i])) {
-      return false;
-    }
-  }
-  return true;
+function matchArray(array, value) {
+  return has(array, value, containsMatch);
 }
 
 function matchObject(obj, value) {
-  for (var key in value) {
-    if (value.hasOwnProperty(key)) {
-      if (deepMatches(obj[key], value[key]) === false) {
-        return false;
-      }
-    }
-  }
-  return true;
+  return has(Object.keys(value), obj, key => deepMatches(obj[key], value[key]));
 }
 
 /**
  * Recursively compare objects
  */
 
-function deepMatches(val, value) {
-  if (typeOf(val) === 'object') {
-    if (Array.isArray(val) && Array.isArray(value)) {
-      return matchArray(val, value);
-    } else {
-      return matchObject(val, value);
-    }
-  } else {
-    return val === value;
+function deepMatches(val, target) {
+  if (Array.isArray(val) && Array.isArray(target)) {
+    return matchArray(val, target);
   }
-}
-
-function prop(name) {
-  return function(obj) {
-    return obj[name];
-  };
-}
-
-function noop(val) {
-  return val;
+  if (typeOf(target) === 'object') {
+    return matchObject(val, target);
+  }
+  return val === target;
 }

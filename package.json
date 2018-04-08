@@ -14,7 +14,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "mocha"
@@ -39,16 +39,6 @@
     "make"
   ],
   "verb": {
-    "related": {
-      "list": [
-        "any",
-        "arr-filter",
-        "arr-map",
-        "array-every",
-        "collection-map",
-        "utils"
-      ]
-    },
     "toc": false,
     "layout": "default",
     "tasks": [
@@ -57,12 +47,15 @@
     "plugins": [
       "gulp-format-md"
     ],
+    "related": {
+      "list": [
+        "breakdance",
+        "micromatch",
+        "snapdragon"
+      ]
+    },
     "lint": {
       "reflinks": true
-    },
-    "reflinks": [
-      "verb",
-      "verb-readme-generator"
-    ]
+    }
   }
 }
